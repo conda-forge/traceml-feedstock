@@ -1,11 +1,11 @@
-About traceml
-=============
+About traceml-feedstock
+=======================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/traceml-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/polyaxon/traceml
 
 Package license: Apache-2.0
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/traceml-feedstock/blob/main/LICENSE.txt)
 
 Summary: Engine for ML/Data tracking, visualization, dashboards, and model UI for Polyaxon.
 
