@@ -8,6 +8,13 @@ package:
 source:
   - url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/traceml-{{ version }}.tar.gz
     sha256: bceb8a811bc787021c8507f8cb2ac4e0523497e817cdfa030bf4b52901fbd875
+  # Remove with the next release
+  - url: https://raw.githubusercontent.com/polyaxon/traceml/7e13f469a08aee289c0d63e5b208b4cc3eb2781c/LICENSE
+    sha256: fcf20c5d52bca6e95551cd3e75c20af556eac7f563a77e1caec0441bf1ffd095
+    fn: LICENSE
+  - url: https://raw.githubusercontent.com/polyaxon/traceml/7e13f469a08aee289c0d63e5b208b4cc3eb2781c/traceml/requirements/dev.txt
+    sha256: aa7d382fdfa94b732a3b3447460c0130962d0e89ac76dfb4a0062f2fbc04e812
+    fn: requirements_dev.txt
 
 build:
   noarch: python
