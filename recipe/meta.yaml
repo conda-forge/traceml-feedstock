@@ -1,5 +1,5 @@
 {% set name = "traceml" %}
-{% set version = "1.1.5" %}
+{% set version = "1.2.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   - url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/traceml-{{ version }}.tar.gz
-    sha256: b094df0cbabda5b839c290939ab54848712b3094eb714453a9bf6c0b34269795
+    sha256: da0d137c49667cad9d1c856fb481d7bde4c287ac46b5f466015aaaee0f84e001
   # Remove with the next release
   - url: https://raw.githubusercontent.com/polyaxon/traceml/7e13f469a08aee289c0d63e5b208b4cc3eb2781c/LICENSE
     sha256: fcf20c5d52bca6e95551cd3e75c20af556eac7f563a77e1caec0441bf1ffd095
@@ -22,7 +22,7 @@ build:
     - mkdir requirements
     - mv requirements_dev.txt requirements/dev.txt
     - {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 0
 
 requirements:
   host:
