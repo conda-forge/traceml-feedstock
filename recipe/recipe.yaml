@@ -27,7 +27,7 @@ requirements:
   host:
     - pip
     - pytest
-    - python ${{ python_min }}
+    - python ${{ python_min }}.*
     - setuptools
   run:
     - python >=${{ python_min }}
