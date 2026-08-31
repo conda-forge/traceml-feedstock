@@ -1,52 +1,54 @@
-{% set name = "traceml" %}
-{% set version = "1.2.5" %}
+schema_version: 1
+
+context:
+  name: traceml
+  version: "1.2.6"
 
 package:
-  name: {{ name|lower }}
-  version: {{ version }}
+  name: ${{ name|lower }}
+  version: ${{ version }}
 
 source:
-  - url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/traceml-{{ version }}.tar.gz
-    sha256: 7ffbd3624f5d209b292739fec6e889367ce38bd1f3b70f16490e7913f0515a4a
-  # Remove with the next release
+  - url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/traceml-${{ version }}.tar.gz
+    sha256: 2e616b149ff4c15a6c3e06a473d4a68c4e2f2ea8d1f74be65b758a0ac95418a8
   - url: https://raw.githubusercontent.com/polyaxon/traceml/7e13f469a08aee289c0d63e5b208b4cc3eb2781c/LICENSE
     sha256: fcf20c5d52bca6e95551cd3e75c20af556eac7f563a77e1caec0441bf1ffd095
-    fn: LICENSE
+    file_name: LICENSE
   - url: https://raw.githubusercontent.com/polyaxon/traceml/7e13f469a08aee289c0d63e5b208b4cc3eb2781c/traceml/requirements/dev.txt
     sha256: aa7d382fdfa94b732a3b3447460c0130962d0e89ac76dfb4a0062f2fbc04e812
-    fn: requirements_dev.txt
+    file_name: requirements_dev.txt
 
 build:
+  number: 0
   noarch: python
   script:
     - mkdir requirements
     - mv requirements_dev.txt requirements/dev.txt
-    - {{ PYTHON }} -m pip install . -vv
-  number: 0
+    - ${{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
     - pytest
-    - python {{ python_min }}
+    - python ${{ python_min }}.*
     - setuptools
   run:
-    - python >={{ python_min }}
+    - python >=${{ python_min }}
 
-test:
-  imports:
-    - traceml
-  commands:
-    - pip check
-  requires:
-    - pip
-    - python {{ python_min }}
+tests:
+  - python:
+      imports:
+        - traceml
+      pip_check: true
+      python_version: 
+       - ${{ python_min }}.*
+       - '*'
 
 about:
-  home: https://github.com/polyaxon/traceml
   summary: Engine for ML/Data tracking, visualization, dashboards, and model UI for Polyaxon.
   license: Apache-2.0
   license_file: LICENSE
+  homepage: https://github.com/polyaxon/traceml
 
 extra:
   recipe-maintainers:
