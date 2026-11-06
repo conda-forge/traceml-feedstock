@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: traceml
-  version: "1.5.0"
+  version: "1.5.1"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   - url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/traceml-${{ version }}.tar.gz
-    sha256: aa3cf89905e86727fda3365daf7b181763cf36ef018da131a8ef23b51d38418f
+    sha256: b65041b998fa321878892b9a4d95628c0d49195ba521b88bc0c2f51eccf32f2a
   - url: https://raw.githubusercontent.com/polyaxon/traceml/7e13f469a08aee289c0d63e5b208b4cc3eb2781c/LICENSE
     sha256: fcf20c5d52bca6e95551cd3e75c20af556eac7f563a77e1caec0441bf1ffd095
     file_name: LICENSE
